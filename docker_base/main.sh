@@ -146,6 +146,18 @@ function fn_balancer {
 	balancer_start
 }
 
+# ------
+
+function fn_help {
+	cat << EOF
+Usage cmd:
+    - cmd server
+    - cmd balancer
+    - cmd web
+    - cmd help
+EOF
+}
+
 # ==========================================
 
 if  [ $# -ge 1 ] && [ "$1" == "cmd" ]; then
@@ -153,6 +165,8 @@ if  [ $# -ge 1 ] && [ "$1" == "cmd" ]; then
 	if [ $# -ge 1 ]; then
 		CMD=$1
 		shift
+	else
+		CMD="help"
 	fi
 fi
 
