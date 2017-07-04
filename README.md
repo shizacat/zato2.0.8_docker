@@ -3,6 +3,7 @@
 ## Build
 
 ```bash
+cd docker_base
 docker build -t shizacat/zato_base_2.0.8:<tag> .
 docker push shizacat/zato_base_2.0.8:<tag>
 ```
