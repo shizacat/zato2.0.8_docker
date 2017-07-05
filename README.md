@@ -13,6 +13,15 @@ docker push shizacat/zato_base_2.0.8:<tag>
 - /opt/zato/code/conf - Configuration zato
 - /opt/zato/code/cert - Folder with certificates
 
+## Naming certificate files
+
+The names will match what will generate the gencert script.
+Excluded only for server certificates. For them, each will need to remove the index in the name of the certificate when it is transferred to the container, for example:
+
+```
+ zato.server1.cert.pem -> zato.server.cert.pem
+```
+
 ## CMD Balancer
 
 ### Ports
