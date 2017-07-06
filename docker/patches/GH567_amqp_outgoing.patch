@@ -1,0 +1,13 @@
+diff -Naur zato/code/zato-server/src/zato/server/connection/amqp/outgoing.py work/code/zato-server/src/zato/server/connection/amqp/outgoing.py
+--- zato/code/zato-server/src/zato/server/connection/amqp/outgoing.py	2017-07-06 09:16:36.000000000 +0300
++++ work/code/zato-server/src/zato/server/connection/amqp/outgoing.py	2017-07-06 09:19:52.000000000 +0300
+@@ -203,7 +203,8 @@
+                 value = msg_properties.get(name) if msg_properties.get(name) else getattr(self.out_amqp, name, None)
+             else:
+                 value = getattr(self.out_amqp, name, None)
+-            properties[name] = value
++            if value:
++                properties[name] = value
+ 
+         if not properties['expiration']:
+             properties['expiration'] = 0
