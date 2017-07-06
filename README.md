@@ -1,3 +1,7 @@
+# Patches
+
+* #GH567 https://github.com/zatosource/zato/commit/812bfdab6008ee4df0aa652084441b023ac7d2cc
+
 # Docker
 
 ## Build
