@@ -1,6 +1,6 @@
 # Patches
 
-* GH567 - Alternative solution. Added the ability to not set the TTL (expiration) for messages.
+* GH567 - Added the ability to not set the TTL (expiration) for messages.
 
 # Docker
 
