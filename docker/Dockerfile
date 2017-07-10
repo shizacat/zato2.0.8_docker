@@ -14,9 +14,9 @@ RUN apt-get update && \
 	rm -rf /var/lib/apt/lists/*
 
 # Patches
-# RUN	mkdir -p /opt/patches
-# COPY patches /opt/patches
-# COPY apply_patch.sh /bin/apply_patch.sh
+RUN	mkdir -p /opt/patches
+COPY patches /opt/patches
+COPY apply_patch.sh /bin/apply_patch.sh
 
 # Build Zato
 RUN apt-get update && \
@@ -29,7 +29,7 @@ RUN apt-get update && \
 	git clone https://github.com/zatosource/zato.git /opt/zato && \
 	cd /opt/zato && \
 	git checkout support/2.0 && \
-	# /bin/apply_patch.sh && \
+	/bin/apply_patch.sh && \
 	cd /opt/zato/code && \
 	/opt/zato/code/install.sh && \
 	/opt/zato/code/bin/python bootstrap.py && \
